@@ -1,0 +1,36 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+ 
+public class DropdownExample {
+    public static void main(String[] args) {
+        // Set the path to chromedriver.exe
+System.setProperty("webdriver.chrome.driver", "/path/to/chromedriver.exe");
+ 
+        // Initialize WebDriver
+        WebDriver driver = new ChromeDriver();
+ 
+        // Navigate to the webpage with the drop-down menu
+driver.get("https://example.com");
+ 
+        // Locate the drop-down element
+WebElement dropdownElement = driver.findElement(By.id("dropdown"));
+ 
+        // Create a Select object
+        Select dropdown = new Select(dropdownElement);
+ 
+        // Select an option by visible text
+        dropdown.selectByVisibleText("Option 1");
+ 
+        // Alternatively, you can select an option by index
+        // dropdown.selectByIndex(1);
+ 
+        // Alternatively, you can select an option by value
+        // dropdown.selectByValue("value1");
+ 
+        // Close the browser
+        driver.quit();
+    }
+}
